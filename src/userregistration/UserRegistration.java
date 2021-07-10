@@ -9,26 +9,26 @@ public class UserRegistration
 
     public static final String NAMEPATTERN = "[A-Z][A-Za-z]{2,}";
 
-    public static void main(String[] args)
+    public static void main(String[] args) 
     {
         UserRegistration userRegistration = new UserRegistration();
         userRegistration.readInput();
     }
-    private void readInput() 
+    private void readInput()
     {
-        System.out.println("Enter first name ");
-        String firstName = scanner.next();
-        validateInput(NAMEPATTERN,firstName);
+        System.out.println("Enter last name ");
+        String lastName = scanner.next();
+        validateInput(NAMEPATTERN,lastName);
     }
 
     private void validateInput(String pattern, String input)
     {
 
-        if(Pattern.matches(pattern, input))
+        if(Pattern.matches(pattern, input)) 
         {
             System.out.println("Valid");
         }
-        else 
+        else
         {
             System.out.println("Invalid");
         }
