@@ -7,28 +7,29 @@ public class UserRegistration
 
     Scanner scanner = new Scanner(System.in);
 
-    public static final String NAMEPATTERN = "[A-Z][A-Za-z]{2,}";
+    public static final String EMAILPATTERN = "([0-9A-Za-z])+([-+._][0-9A-Za-z]+)*" + "@([0-9A-Za-z])+[.]([a-zA-Z])+([.][A-Za-z]+)*";
 
     public static void main(String[] args) 
     {
         UserRegistration userRegistration = new UserRegistration();
         userRegistration.readInput();
     }
-    private void readInput()
+    //Method to read the input from the user
+    private void readInput() 
     {
-        System.out.println("Enter last name ");
-        String lastName = scanner.next();
-        validateInput(NAMEPATTERN,lastName);
+        System.out.println("Enter email id ");
+        String EmailId = scanner.next();
+        validateInput(EMAILPATTERN,EmailId);
     }
 
-    private void validateInput(String pattern, String input)
+    private void validateInput(String pattern, String input) 
     {
 
         if(Pattern.matches(pattern, input)) 
         {
             System.out.println("Valid");
         }
-        else
+        else 
         {
             System.out.println("Invalid");
         }
